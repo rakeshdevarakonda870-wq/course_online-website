@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --surface: #0f131d;
+  --surface-lowest: #0a0e18;
+  --surface-low: #171b26;
+  --surface-container: #1c1f2a;
+  --surface-high: #262a35;
+  --surface-highest: #313540;
+  --on-surface: #dfe2f1;
+  --on-surface-variant: #c2c6d6;
+  --outline: #8c909f;
+  --outline-variant: #424754;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-fixed: #adc6ff;
+  --secondary: #8b5cf6;
+  --secondary-fixed: #d0bcff;
+  --emerald: #10b981;
+}
+
+@layer base {
+  html {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--surface);
+    color: var(--on-surface);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+.nexora-card {
+  background-color: #171b26;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.nexora-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 1px auto 1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.38),
+    rgba(139, 92, 246, 0.28),
+    transparent 85%
+  );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.nexora-glass {
+  background: rgba(28, 31, 42, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nexora-progress-fill {
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.45);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
